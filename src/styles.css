@@ -1448,8 +1448,18 @@ main {
   inset: 0;
   content: "";
   background:
-    linear-gradient(0deg, rgba(6, 8, 7, 0.36), transparent),
+    linear-gradient(0deg, rgba(6, 8, 7, 0.66), transparent 64%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 22px),
+    var(--thumb-image),
     var(--thumb-bg);
+  background-position: center;
+  background-size: auto, auto, cover, cover;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), filter 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.heroThumb:hover::before {
+  filter: saturate(1.08) brightness(1.06);
+  transform: scale(1.06);
 }
 
 .thumbOne {

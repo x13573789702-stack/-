@@ -385,13 +385,22 @@ function App() {
             </div>
 
             <div className="heroThumbs" aria-label="精选能力">
-              <div className="heroThumb thumbOne">
-                <span>Bid</span>
+              <div
+                className="heroThumb thumbOne"
+                style={{ "--thumb-image": `url("${asset("/hero-thumb-sales.webp")}")` }}
+              >
+                <span>Sales</span>
               </div>
-              <div className="heroThumb thumbTwo">
+              <div
+                className="heroThumb thumbTwo"
+                style={{ "--thumb-image": `url("${asset("/hero-thumb-material.webp")}")` }}
+              >
                 <span>Material</span>
               </div>
-              <div className="heroThumb thumbThree">
+              <div
+                className="heroThumb thumbThree"
+                style={{ "--thumb-image": `url("${asset("/hero-thumb-ai.webp")}")` }}
+              >
                 <span>AI</span>
               </div>
             </div>
