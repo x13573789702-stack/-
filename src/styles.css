@@ -1309,7 +1309,7 @@ main {
   transform: translateX(-50%);
   background:
     linear-gradient(180deg, rgba(231, 223, 207, 0.42), rgba(69, 67, 59, 0.92)),
-    url("/project-bidding-client-support.webp") center/cover;
+    var(--architecture-image) center/cover;
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.32);
   will-change: transform, clip-path, opacity;
 }

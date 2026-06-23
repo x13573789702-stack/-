@@ -9,6 +9,8 @@ import "./styles.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const Icon = ({ name, size = 20 }) => (
   <span
     className={`icon icon-${name}`}
@@ -38,7 +40,7 @@ const projects = [
     tag: "国家级一等奖项目",
     body: "主导生物降解薄膜性能升级，完成从实验室研发到落地可行性的全流程分析，并面向企业专家完成技术宣讲与价值表达。",
     meta: "技术研发 / 产品价值 / 市场竞争力",
-    image: "/project-nano-materials.webp",
+    image: asset("/project-nano-materials.webp"),
     imageClass: "projectImageOne"
   },
   {
@@ -46,7 +48,7 @@ const projects = [
     tag: "新材料应用研究",
     body: "围绕纳米纤维素、生物降解塑料在包装、农业、医疗等场景的适用性，沉淀产品选型与技术答疑能力。",
     meta: "应用场景 / 技术参数 / 客户转化",
-    image: "/project-nano-applications.webp",
+    image: asset("/project-nano-applications.webp"),
     imageClass: "projectImageTwo"
   },
   {
@@ -54,7 +56,7 @@ const projects = [
     tag: "中建一局安装工程",
     body: "解读客户招标需求与技术文件，参与技术及资信标书编制，对接项目相关公司资源信息，并用 Revit 辅助方案演示。",
     meta: "标书编制 / 技术文件 / 可视化演示",
-    image: "/project-bidding-client-support.webp",
+    image: asset("/project-bidding-client-support.webp"),
     imageClass: "projectImageThree"
   }
 ];
@@ -64,37 +66,37 @@ const strengths = [
     icon: "target",
     title: "客户需求洞察",
     text: "能把技术文件、招标要求和客户痛点拆解成清晰的方案要点，推动需求从模糊到可执行。",
-    image: "/strength-customer-insight.webp"
+    image: asset("/strength-customer-insight.webp")
   },
   {
     icon: "deck",
     title: "技术价值表达",
     text: "擅长用 PPT、演示和结构化叙事讲清产品优势、应用场景与商业价值。",
-    image: "/strength-value-expression.webp"
+    image: asset("/strength-value-expression.webp")
   },
   {
     icon: "file",
     title: "招投标全流程",
     text: "熟悉技术标、资信支持与标书编制，具备工程项目售前支持经验。",
-    image: "/strength-bidding-process.webp"
+    image: asset("/strength-bidding-process.webp")
   },
   {
     icon: "cpu",
     title: "新材料技术底座",
     text: "理解纳米纤维素、生物降解塑料、高分子薄膜等材料性能、工艺和下游应用。",
-    image: "/strength-materials-foundation.webp"
+    image: asset("/strength-materials-foundation.webp")
   },
   {
     icon: "bot",
     title: "AI 工具熟练应用",
     text: "熟练使用 Codex 辅助资料整理、方案生成、页面搭建与代码迭代，并能用 ccswitch 高效切换模型和工作流。",
-    image: "/strength-ai-tools.webp"
+    image: asset("/strength-ai-tools.webp")
   },
   {
     icon: "users",
     title: "跨部门协同",
     text: "曾任学院办公室部长和技术部部长，具备事务统筹、团队分工和多任务推进能力。",
-    image: "/strength-collaboration.webp"
+    image: asset("/strength-collaboration.webp")
   }
 ];
 
@@ -326,7 +328,7 @@ function App() {
             playsInline
             preload="auto"
           >
-            <source src="/hero-background.mp4" type="video/mp4" />
+            <source src={asset("/hero-background.mp4")} type="video/mp4" />
           </video>
           <div className="heroAtmosphere" />
           <div className="navFloatSentinel" aria-hidden="true" />
@@ -359,7 +361,11 @@ function App() {
               <span>ENGINEER</span>
             </h1>
 
-            <div className="heroArchitecture" aria-hidden="true">
+            <div
+              className="heroArchitecture"
+              style={{ "--architecture-image": `url("${asset("/project-bidding-client-support.webp")}")` }}
+              aria-hidden="true"
+            >
               <div className="architecturePlane" />
               <div className="architecturePortal">
                 <span />
@@ -434,7 +440,7 @@ function App() {
               <div className="portrait">
                 <div className="avatarInitials">
                   <img
-                    src="/avatar.jpg"
+                    src={asset("/avatar.jpg")}
                     alt="邢添庆头像"
                     loading="lazy"
                     decoding="async"
